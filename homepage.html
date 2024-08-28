@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Edu Assist</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+</head>
+
+<body style="background-color: #9bc8d2;">
+<header class="header">
+  <div class="title-container">
+    <h1>Edussist</h1>
+    <img src="{% static 'image/logo.png' %}" alt="logo">
+  </div>
+
+  <div class="menu-bar">
+    <div class="hamburger-icon">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class = "nav-links">
+        <li><a href = "#home"> Home </a></li>
+        <li><a href = "#blog"> Blog </a></li>
+        <li><a href = "#about us"> About </a></li>
+    </ul>
+  </div>
+  
+  <div class="button-container"> 
+    <a href = "{% url 'system:Sign_in'%}"  class="button-65" role="button">Login</a>
+  </div>
+
+</header>
+
+<section class="home" id = "home">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'image/Slide 1.jpg' %}" alt="Slide 1" height= auto, width = auto>
+        <div class="carousel-caption">
+          <h5>Guiding Your Academic Journey, One Recommendation at a Time.</h5>
+          <p>Edussist offers personalized university recommendations tailored to your preferences..</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'image/Slide 2.jpg' %}" class="d-block w-100 carousel-img" alt="Slide 2" height=auto, width = auto>
+        <div class="carousel-caption">
+          <h5>Unlocking Opportunities, Empowering Futures</h5>
+          <p>Explore diverse educational pathways matched to your unique aspirations with Edussist.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'image/Slide 3.jpg' %}" class="d-block w-100 carousel-img" alt="Slide 3" height=auto, width = auto>
+        <div class="carousel-caption">
+          <h5>Navigate Higher Education with Confidence</h5>
+          <p>Make informed decisions and embark on your educational adventure confidently with Edussist.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<section class = "blog" id = "blog">
+  <div class = "blog-container">
+    <div class = "row">
+      <div class = "blog-header">
+        <h1 >Blog</h1>
+      </div>
+    </div>
+
+      <div class = "blog-content">
+        <div class = "card">
+          <img src = "{% static 'image/Image 1.jpg' %}">
+            <h4> Top 10 Factors of Choosing a College</h4>
+            <a href="{% url 'system:Blog1'%}" class = "button">Read More</a>  
+        </div>
+
+        <div class = "card">
+          <img src = "{% static 'image/Image 2.jpg' %}">
+          <h4> Should I Go to University? </h4>
+          <a href="{% url 'system:Blog2'%}" class = "button">Read More</a>
+        </div>
+
+        <div class = "card">
+          <img src = "{% static 'image/Image 3.jpg' %}">
+          <h4> Studying Abroad or Stay Home?</h4>
+          <a href="{% url 'system:Blog3'%}" class = "button">Read More</a>
+        </div>
+
+        <div class = "card">
+          <img src = "{% static 'image/Image 4.jpg' %}">        
+          <h4> The Importance of Culture in Campus</h4>
+          <a href="{% url 'system:Blog4'%}" class = "button">Read More</a>
+        </div>
+
+        <div class = "card">
+          <img src = "{% static 'image/Image 5.jpg' %}.">
+          <h4> Decoding University Rankings:<br> What They Really Mean</h4>
+          <a href="{% url 'system:Blog5'%}" class = "button">Read More</a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class = "about us" id = "about us">
+  <div class = "about-header">
+    <div class = "about">
+      <h1 >About Us</h1>
+    </div>
+
+    <div class = "about-content">
+      <img src = "{% static 'image/Image 7.jpg' %}">
+      <p>Welcome to  Edussist! We are a dynamic team of aspiring engineers, designers, and innovators dedicated to pushing the boundaries of technology and creativity. Our project represents the culmination of months of hard work, collaboration, and ingenuity.
+        At the heart of our team is a shared passion for problem-solving and innovation. Each member brings a unique set of skills and perspectives to the table, creating a diverse and dynamic environment where creativity thrives. From brainstorming sessions to late-night coding marathons, we've poured our hearts and souls into crafting a project that we're truly proud of.<br><br>
+        
+        Our project aims to tackle student's problem in selecting and deciding their higher education institution. Through meticulous research, prototyping, and testing, we've developed a solution that we believe has the potential to make a real difference in the world.
+        But our journey doesn't end here. As we showcase our project to the world, we're excited to gather feedback, iterate on our ideas, and continue refining our solution. We're committed to lifelong learning and growth, and we see this project as just the beginning of our journey as aspiring technologists and innovators.<br><br>
+        
+        Thank you for joining us on this exciting adventure. We invite you to explore our project, engage with our ideas, and join us as we strive to make a positive impact through innovation.<br><br><br>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="footer">
+  <div class="box-container">
+      <div class="box">
+          <h3 style = "color: white; font-family: Poppins;">Location</h3>
+          <a href="#">17a,Jalan Puncak Menara Gading, Taman Connaught, 56000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</a>
+
+      </div>
+
+
+      <div class="box">
+          <h3 style = "color: white; font-family: Poppins;">Contact Info</h3>
+          <a href="#">+123-456-7890</a>
+          <a href="#">+111-222-3333</a>
+          <a href="#">abcdefg@gmail.com</a>
+          <a href="#">hasdfas@gmail.com</a>
+      </div>
+
+      <div class="box">
+          <h3 style = "color: white; font-family: Poppins;">Follow Us</h3>
+          <a href="#">facebook</a>
+          <a href="#">twitter</a>
+          <a href="#">instagram</a>
+      </div>
+  </div>
+</section>
+
+
+<script src="{% static 'js/script.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

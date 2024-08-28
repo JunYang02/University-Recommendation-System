@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nunito:wght@200;300;400;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #8da7ec;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.col-md-6 {
+    position: relative;
+    width: 100%;
+    background: #cee5fa;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+
+.col-md-6 h1 {
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+.col-md-6 h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 28px;
+    background: #4070f4;
+}
+
+.col-md-6 form,
+.col-md-6 .card {
+    margin-top: 25px;
+}
+
+.col-md-6 form .major,
+.col-md-6 form .admission,
+.col-md-6 form .accommodation,
+.col-md-6 form .qualification,
+.col-md-6 form .institution {
+    display: grid;
+    margin-top: 20px;
+    height: 50px;
+}
+
+.col-md-6 form .institution {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.form-container .error {
+    color: #ff0000;
+    font-size: 0.9em;
+    margin-top: 8px;
+    background-color: #ffe5e5;
+    padding: 2px;
+    border: 1px solid #ff0000;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+.col-md-4 {
+    width: 180px;
+    height: 180px;
+}
+
+.chat-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #d2fdac;
+    font-family: 'Poppins', Times, serif;
+}
+
+.bot-response {
+    background-color: #f4dddd;
+    font-size: 1.1rem;
+    font-family: 'Poppins', Times, serif;
+}
+
+.recommendation-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Poppins', Times, serif;
+    text-align: justify;
+}
+
+.namelist {
+    font-weight: bold;
+    color: #e82117;
+}
+
+.chatbot-container {
+    width: 100%; /* Make the chatbot container take the full width */
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        max-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nunito:wght@200;300;400;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Abhaya Libre', 'Merriweather', 'Poppins', 'Nunito', Arial, Helvetica, sans-serif;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+
+/* Main system design */
+.header2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #113F67;
+  font-size: 1.2em;
+  font-family: 'Merriweather';
+  color: white;
+  box-sizing: border-box;
+}
+
+.button-container {
+  display: flex;
+  gap: 30px;
+}
+
+/* CSS */
+.button-65 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #2f80ed;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  width: 120px;
+
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-65:hover {
+  background-color: #1366d6;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-65:hover:after {
+  opacity: .5;
+}
+
+.button-65:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-65:active:after {
+  opacity: 1;
+}
+
+
+/* Search container */
+.search-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.search-container h1 {
+  font-size: 1.0 rem;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 800px;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 24px;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+}
+
+.text {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; 
+}
+
+.button-66 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #113F67;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  width: 240px;
+
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-66:hover {
+  background-color: #1d66a5;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-66:hover:after {
+  opacity: .5;
+}
+
+.button-66:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-66:active:after {
+  opacity: 1;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-container h1 {
+  margin-top: 20px;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.search-bar {
+  width: 80%;
+  max-width: 600px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.column-container {
+  display: flex;
+  gap: 20px; 
+  justify-content: center;
+}
+
+.blank-column {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+
+}
+.first-column {
+  height: 1250px;
+  width: 430px;
+  margin-left: 30px;
+  font-size: 12px;
+  margin-top: 21px;
+  display: flex;
+  flex-direction: column;
+}
+
+.second-column {
+  width: 1450px;
+  height: auto;
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
+.blank-column h4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 15px; /* Adjust the spacing as desired */
+  font-family:  "Poppins";
+  font-weight: 400;
+}
+
+.qualification-column  {
+  margin-top: 25px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  flex-direction:column;
+  font-size: 18px;
+}
+
+.institution-column {
+  margin-top: 25px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  align-items: center;   
+  font-size: 18px;
+}
+
+.institution-column label{
+  font-size: 20px;
+}
+
+.institution-column input[type="checkbox"] {
+  width: 10px;   
+  height: 10px;  
+  transform: scale(1.5); 
+  margin-right: 10px; 
+}
+
+.blank-column .button-17 {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.button-17:hover {
+  background-color: #9eebeb;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-17:hover:after {
+  opacity: .5;
+}
+
+.button-17:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-17:active:after {
+  opacity: 1;
+}
+
+#university-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#university-list li {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#university-list li h5 {
+  font-family: 'Poppins';
+  margin-top: 0;
+  color: #333;
+}
+
+
+#university-list li p {
+  font-family: 'Poppins';
+  margin: 5px 0;
+  color: #666;
+}
+
+.page-link {
+  margin: 0 5px; 
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.page-link.active {
+  background-color: #007bff; 
+  color: #fff; 
+}
+
+
+.university-logo {
+  max-width: 150px;
+  max-height: 150px;
+  margin-bottom: 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.detail-row span {
+  font-family: 'Poppins';
+  color: #666;
+}
+
+.detail-row .bold-caption {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+}
+
+.detail-row .detail-value {
+  flex: 3;
+  text-align: left;
+  margin-right: 50px;
+  padding: 5px;
+}
+
+.official-page-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.official-page-button:hover {
+  background-color: #0056b3;
+}
+
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-container a {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #000;
+}
+
+.pagination-container a.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+@media (max-width: 768px) { 
+  .first-column {
+    display: none; 
+  }
+
+  .qualification-column {
+    display: none; 
+  }
+
+  .institution-column {
+    display: none; 
+  }
+
+  .search-bar{
+    width: 90%;
+  }
+
+  .second-column{
+    max-width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+
+

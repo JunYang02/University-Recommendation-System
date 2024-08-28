@@ -1,0 +1,272 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop Your Preferences</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/form.css' %}">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+    .chat-message {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .user-message {
+      background-color: #e1ffc7; /* Light green background for user messages */
+    }
+
+    .bot-response {
+      background-color: #f1f1f1; /* Light grey background for bot responses */
+    }
+
+    .recommendation-text {
+      margin-top: 10px;
+    }
+
+    .namelist {
+      font-weight: bold;
+    }
+
+    .custom-form-width {
+      max-width: 80%; /* Adjust the percentage to set the desired width */
+      margin-left: 120px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 mb-4 custom-form-width">
+        <h1>Drop Your Preferences</h1>
+        <form id="PreferenceForm" method="POST" action="{% url 'system:filter_university' %}">
+          {% csrf_token %}
+  
+          {% if form.non_field_errors %}
+            <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+          {% endif %}
+  
+          <div class="mb-3 major">
+            <label for="id_preferred_major" class="form-label">{{ form.preferred_major.label }}</label>
+            {% if form.preferred_major.errors %}
+              <div class="alert alert-danger">{{ form.preferred_major.errors }}</div>
+            {% endif %}
+            {{ form.preferred_major }}
+          </div>
+  
+          <div class="mb-3 admission">
+            <label for="id_admission" class="form-label">{{ form.admission.label }}</label>
+            {{ form.admission }}
+          </div>
+  
+          <div class="mb-3 accommodation">
+            <label for="id_accommodation" class="form-label">{{ form.accommodation.label }}</label>
+            {{ form.accommodation }}
+          </div>
+  
+          <div class="mb-3 qualification">
+            <label for="id_qualification" class="form-label">{{ form.qualification.label }}</label>
+            {{ form.qualification }}
+          </div>
+  
+          <div class="mb-3 institution">
+            <label for="id_institution_type" class="form-label">{{ form.institution_type.label }}</label>
+            {{ form.institution_type }}
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+  
+      <div class="col-md-6 mb-5">
+        <div id="results" class="mt-5">
+          <!-- Filtered universities will be displayed here -->
+        </div>
+  
+  <!-- Chatbot Interface -->
+  <div class="card mt-5">
+    <div class="card-body">
+      <h2>Questions?</h2>
+      <div id="chatbox" class="mb-3" style="height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;"></div>
+      <div class="input-group">
+        <input type="text" id="user-input" class="form-control" placeholder="Type your message here...">
+        <div class="input-group-append">
+          <button id="send-button" class="btn btn-primary">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery and jQuery UI libraries -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Autocomplete script -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#PreferenceForm").submit(function(event) {
+      event.preventDefault();
+      $.ajax({
+        url: $(this).attr('action'),
+        type: $(this).attr('method'),
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function(data) {
+          let universities = data.universities;
+          let resultDiv = $('#results');
+          resultDiv.empty();
+          if (universities.length === 0) {
+            resultDiv.append('<p>Sorry, no universities found.</p>');
+          } else {
+            let maxUniversitiesToShow = 20; 
+            universities.slice(0, maxUniversitiesToShow).forEach(university => {
+              resultDiv.append(`
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="${university.Image}" class="img-fluid rounded-start" alt="${university.name}">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">${university.name}</h5>
+                        <p class="card-text"><small class="text-muted">Type: ${university.university_type}</small></p>
+                        <p class="card-text">Location: ${university.location}</p>
+                        <p class="card-text">Contact Info: ${university.contact_info}</p>
+                        <p class="card-text">Admission: ${university.admission}</p>
+                        <p class="card-text">Faculty: ${university.faculty}</p>
+                        <p class="card-text">Program: ${university.program}</p>
+                        <p class="card-text">PreU: ${university.PreU}</p>
+                        <p class="card-text">Undergraduate: ${university.Undergraduate}</p>
+                        <p class="card-text">Postgraduate: ${university.Postgraduate}</p>
+                        <p class="card-text">Accommodation: ${university.Accommodation}</p>
+                        <a href="${university.official_page}" target="_blank" class="btn btn-primary">Official Page</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `);
+            });
+          }
+  
+          // Trigger the chatbot response
+          autoChatbotResponse(universities);
+        },
+        error: function(xhr, status, error) {
+          console.error('Error fetching university data:', error);
+          const chatbox = document.getElementById('chatbox');
+          chatbox.innerHTML += `<div class="chat-message bot-response"><strong>Bot:</strong> Please submit the form first to get recommendations.</div>`;
+          chatbox.scrollTop = chatbox.scrollHeight;
+        }
+      });
+    });
+  
+    function autoChatbotResponse(universities) {
+      const chatbox = document.getElementById('chatbox');
+      const initialHeight = chatbox.scrollHeight; // Get the initial height before adding new messages
+      if (universities.length === 0) {
+        chatbox.innerHTML += `<div class="chat-message bot-response"><strong>Bot:</strong> Sorry, no universities found matching your preferences.</div>`;
+      } else {
+        chatbox.innerHTML += `<div class="chat-message bot-response"><strong>Bot:</strong> Hi! We found ${universities.length} universities that match your preferences. Do you want to see the top 3 recommendations? Please type 'yes' or 'no'.</div>`;
+      }
+      chatbox.scrollTop = chatbox.scrollHeight;
+      window.universities = universities; // Store the universities for later use
+      window.confirmationPending = true; // Set a flag to indicate waiting for user confirmation
+      window.showMorePending = false; // New flag for the additional question
+    }
+  
+    function sendMessage() {
+      const userInput = document.getElementById('user-input').value;
+      if (userInput) {
+        const chatbox = document.getElementById('chatbox');
+        const initialHeight = chatbox.scrollHeight; 
+        chatbox.innerHTML += `<div class="chat-message user-message"><strong>You:</strong> ${userInput}</div>`;
+    
+        // Reset user input field
+        document.getElementById('user-input').value = '';
+    
+        if (window.confirmationPending && (userInput.toLowerCase() === 'yes' || userInput.toLowerCase() === 'no')) {
+          window.confirmationPending = false; // Reset the flag
+          if (userInput.toLowerCase() === 'yes') {
+            // Display the top 3 universities
+            window.universities.slice(0, 3).forEach(university => {
+              chatbox.innerHTML += `
+                <div class="chat-message bot-response">
+                  <div class="namelist">${university.name}</div> - Located in ${university.location}. 
+                  <br>Score: ${university.score}
+                  <br>Reason:<br>
+                  <div class="recommendation-text">${university.Recommendation}</div>
+                  <br><a href="${university.official_page}" target="_blank">Learn more</a>
+                </div>`;
+            });
+            
+            // Ask if the user wants to see more results
+            chatbox.innerHTML += `<div class="chat-message bot-response"><strong>Bot:</strong> Would you like to see all the filtered results? Please type 'yes' or 'no'.</div>`;
+            window.showMorePending = true;
+          } else {
+            chatbox.innerHTML += `<div class="chat-message bot-response"><strong>Bot:</strong> Okay, let me know if you need any other help.</div>`;
+          }
+        } else if (window.showMorePending && (userInput.toLowerCase() === 'yes' || userInput.toLowerCase() === 'no')) {
+          window.showMorePending = false; // Reset the flag
+          if (userInput.toLowerCase() === 'yes') {
+            // Display all filtered universities
+            window.universities.forEach(university => {
+              chatbox.innerHTML += `
+                <div class="chat-message bot-response">
+                  <div class="namelist">${university.name}</div> - Located in ${university.location}. 
+                  <br>Score: ${university.score}
+                  <br>Reason:<br>
+                  <div class="recommendation-text">${university.Recommendation}</div>
+                  <br><a href="${university.official_page}" target="_blank">Learn more</a>
+                </div>`;
+            });
+            chatbox.innerHTML += `<div class="chat-message bot-response"><strong>Bot:</strong> That's all the filtered results. Kindly refresh the page to have the best view of the page if you want to see other majors.</div>`;
+          } else {
+            chatbox.innerHTML += `<div class="chat-message bot-response"><strong>Bot:</strong> Okay, let me know if you need any other help.</div>`;
+          }
+        } else {
+          // Existing AJAX call for other user inputs
+          $.ajax({
+            url: '/chatbot/',
+            type: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'X-CSRFToken': '{{ csrf_token }}' // Include CSRF token if needed
+            },
+            data: `message=${encodeURIComponent(userInput)}`,
+            success: function(data) {
+              const botResponse = data.response;
+              chatbox.innerHTML += `<div class="chat-message bot-response"><strong>Bot:</strong> ${botResponse}</div>`;
+  
+              chatbox.scrollTop = chatbox.scrollHeight;
+            },
+            error: function(xhr, status, error) {
+              console.error('Error sending message to chatbot:', error);
+              chatbox.innerHTML += `<div class="chat-message bot-response"><strong>Bot:</strong> Please submit the form first to get recommendations.</div>`;
+            }
+          });
+        }
+        
+        chatbox.scrollTop = chatbox.scrollHeight;
+      }
+    }
+  
+    // Attach sendMessage function to the send button
+    document.getElementById('send-button').addEventListener('click', sendMessage);
+  
+    // Allow pressing Enter key to send message
+    document.getElementById('user-input').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

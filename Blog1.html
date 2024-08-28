@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Edu Assist</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <style>
+  * {
+    background-color: #f3f9fb;
+  }
+
+  .content img {
+    width: 60%;
+    height: 500px;
+    margin-left: 170px;
+    margin-bottom: 20px;
+  }
+
+  .content p {
+    font-family: "Poppins";
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 10px;
+    text-align: justify;
+  }
+
+  .content h2 {
+    margin-left: 5px;
+    font-family: "Poppins";
+  }
+
+  .button-65 {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #2f80ed;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: none;
+    width: 120px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    height: 50px;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 10px 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  .button-65:hover {
+    background-color: #1366d6;
+    box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+  }
+
+  .button-65:hover:after {
+    opacity: .5;
+  }
+
+  .button-65:active {
+    box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+    transform: translateY(2px);
+    transition-duration: .35s;
+  }
+
+  .button-65:active:after {
+    opacity: 1;
+  }
+
+  .back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  </style>
+</head>
+<body>
+  <div class="back-button">
+    <button class="button-65" onclick="history.back()">Go Back</button>
+  </div>
+
+  <div class="content">
+    <h2>Top 10 Factors of Choosing a College</h2><br>
+    <p>10. Location and Distance From Home<br>
+      Whether it’s a small school in the middle of a large city or a university that makes up most of a small town, choosing your school should go beyond the campus. There are benefits to small and large campuses and communities, so you will want to do your research to find out what it’s like to live there.
+    </p><br>
+    <p>9. Cost and Fees<br>
+      The sticker price on most schools is not usually what a student will pay, especially regarding private colleges. Ask about financial aid and scholarship opportunities at the colleges or universities you are interested in. There are also many local scholarships and renewable scholarships available.
+    </p>
+    <p>8. Class Size<br>
+      Class size has a big impact on learning. There is a difference between having smaller discussion-based classes and big lectures with hundreds of students. Honestly consider which learning style works best for you as well as what type of relationship you want to have with your professors. Larger schools often have teaching assistants working with bigger classes.
+    </p>
+    <p>7. Majors and Minors<br>
+      Each school has a different curriculum design, so consider what you want to get out of the next four years. Are you hoping for classes very specific to one discipline or more diverse experiences? You’ll also want to find out which majors, minors, and concentrations are offered at each school you’re considering.
+    </p>
+    <p>6. Athletics and Extracurricular Activities<br>
+      Interested in music, theatre, sports, or student government? Whatever you plan on participating in, college is a time to explore new passions and develop old hobbies. The right school for you will have the opportunities to do both.
+    </p>
+    <img src="{% static 'image/Image 1.jpg' %}">
+    <p>5. Campus Life<br>
+      The school spirit and general atmosphere will set the tone for your experience. Ask important questions like “How many students live on campus?” or “What is there to do on the weekends?” These questions can give you a better sense of the college lifestyle. Each school has its own Residence Life program, so asking specifics about the residence halls or first-year programs will give you a good indication of the level of student involvement.
+    </p>
+    <p>4. Academic Support and Career Services<br>
+      How a college assists students with academics is an important factor in what kind of education you will be getting. Some schools offer little support and want to foster an environment of independence, while other schools offer options like free tutoring groups and writing assistance. Also, knowing the school’s placement rates for jobs and postgraduate schools is critical to consider because it gives an indication of the success and depth of each program.
+    </p>
+    <p>3. Safety<br>
+      Not only is on-campus safety and policy a major factor when considering a school but also the safety of the surrounding area. What kinds of safety measures does the school have in place? What is the neighborhood like? Knowing the school’s policies and procedures concerning student safety can be useful in deciding whether or not it is the best fit.
+    </p>
+    <p>2. Internship Opportunities<br>
+      Having experience in the field you are interested in is not only valuable for future careers but also a great way to discover your passions and expand your network. Check out the internships, hands-on experiences, research, and study abroad opportunities the school provides.
+    </p>
+    <p>1. Perspective<br>
+      The most important factor when considering a college is how the school makes you feel. Regardless of all the programs, opportunities, and scholarships, the school you choose should feel like home, a place where you will be able to grow and develop not just academically but in all aspects of life. The right college will foster an environment that will challenge you but also help you to realize your dreams and goals by providing you with the tools that will remain with you for the rest of your life.
+    </p>
+  </div>
+</body>
+</html>

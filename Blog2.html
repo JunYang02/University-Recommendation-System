@@ -1,0 +1,180 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Edu Assist</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <style>
+      *{
+    background-color: #f3f9fb;
+  }
+
+  .content img {
+  width:60%;
+  height: 500px;
+  margin-left: 170px;;
+  margin-bottom: 20px;
+  }
+
+  .content p{
+    font-family: "Poppins";
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 10px;
+    text-align: justify;
+  }
+
+  .content h2{
+    margin-left: 5px;
+    font-family: "Poppins";
+  }
+
+  .content .highlight{
+    font-weight: bold;
+    color: blue;
+  }
+
+  .button-65 {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #2f80ed;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: none;
+    width: 120px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    height: 50px;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 10px 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  .button-65:hover {
+    background-color: #1366d6;
+    box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+  }
+
+  .button-65:hover:after {
+    opacity: .5;
+  }
+
+  .button-65:active {
+    box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+    transform: translateY(2px);
+    transition-duration: .35s;
+  }
+
+  .button-65:active:after {
+    opacity: 1;
+  }
+
+  .back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  </style>
+
+</head>
+
+<body>
+  <div class="back-button">
+    <button class="button-65" onclick="history.back()">Go Back</button>
+  </div>
+
+    <div class = "content">
+        <h2>Should I Go to University? Pros and Cons</h2>
+        <p><span class = "highlight">Pros of going to university </span><br>
+           Here are 10 benefits of going to university worth considering:<br><br>
+           1. You’ll be able to secure specialised jobs<br>
+           Gaining a university degree in your area of interest will improve your chances of securing a job role in specialised fields. Indeed, most skilled jobs require academic training as well as a bachelor’s and master's degree. Some examples include careers in healthcare, engineering, education, law, and accounting.
+           So, while there are many alternatives to university, a university education is essential for certain roles and careers.<br><br>
+
+           2. You’ll earn more money<br>
+           Did you know that graduates earn 35% more than college leavers?
+           So, if you are a high school student aspiring towards having a lucrative career, a college degree will give you a head start.
+           Meanwhile, if you are a professional with industry experience and are hoping to land a promotion or develop your career further, a university degree can certainly help. That said, this will also depend on your industry as well as your employer.<br><br>
+           
+           3. You’ll develop transferrable skills<br>
+           Transferable skills refer to a set of skills that you can use in any job role. Some of the most useful transferable skills include communication, critical thinking, teamwork, multitasking, leadership, and creativity.
+           So, attending a university will not only provide you with specific subject knowledge but a chance to hone other skills that make you more employable.<br><br>
+           
+           4. You’ll broaden your mind<br>
+           Going to university gives you a chance to move somewhere new, meet people from diverse backgrounds and make friends from across the world.
+           Not only will you broaden your social circle but your mindset, too.Plus, apart from studying, you can throw yourself into other extracurriculars that revolve around culture, politics, arts and sports. All of which will contribute to your personal growth.<br><br>
+          
+           5. You’ll gain expertise in your favourite subject<br>
+           If you know what field you wish to pursue a career in or are passionate about a particular subject and want to learn more about it, then college could be for you.
+           Pursuing a degree will help you become an expert in your areas of interest and allow you to delve deeper into these topics. You could even pursue a career within academia, by obtaining a master’s and PhD qualification after finishing your undergraduate studies.<br><br>
+           
+           6. You’ll hone your research skills<br>
+           A university degree teaches you how to think analytically and critically, but also how to conduct thorough research, question assumptions, become apt at solving problems and deduce informative conclusions.
+           Whether it’s research for a bio-med project, or a literature thesis, this is a skill that is invaluable to employers, and which you will utilise time and time again throughout your career.<br><br>
+        
+           7. You’ll have access to networking opportunities<br>
+           Your professional network plays a critical role in  your success in this day and age.
+           University will allow you to create and broaden your network of professional contacts, be it through volunteering opportunities, internships or meet-and-greets that can bring you in touch with potential employers and people who can support you in your future endeavours.<br><br>
+           
+           8. You’ll become more independent<br>
+           For young students, university life gives you a taste of living independently. Not only are you exposed to new social settings, but you learn about basic life skills such as doing the laundry, cooking and paying bills.
+           This newly-found sense of independence will give you a chance to grow into an adult and give you more responsibility over yourself. It may sound daunting at first, but you will learn a lot and grow from this experience.<br><br>
+           
+           9. You’ll be able to see the world<br>
+           If you choose to enrol in an academic institution in a different country, this will give you the chance to travel and study at the same time. In many universities you will also have the option to do a year abroad, and there may also be courses that include field trips in different countries.<br>
+           So, if you are passionate about travelling and exploring new places, university could definitely open up a few opportunities for you to do just that.<br><br>
+            
+           10. You’ll be able to gain work experience<br>
+           As a university student, you will have your fair pick of internships and part-time jobs which will allow you to attain experience and gain technical skills. Some degree programmes offer a year in industry, but also job placement opportunities that you can pursue during summer breaks.
+           This will ultimately give you a head start as a graduate looking for entry-level positions, and will certainly contribute to your résumé.<br><br><br>
+           
+           <img src = "{% static 'image/Image 2.jpg' %}"><br>
+
+           <span class = "highlight">Cons of going to university</span><br>
+           Like everything else, going to university has its shortcomings. Here are 10 disadvantages of going to university.<br><br>
+
+           1. You will end up in debt<br>
+           Everyone knows how expensive education is nowadays. Therefore, unless you have the financial means to pay for your education upfront, you will be graduating not just with a degree but also a considerable debt.
+           Plus, there other expenses you need to take into consideration, including your accommodation costs as well as living expenses.            
+           That said, you can always apply for financial aid, scholarships and bursaries that will lift some of the financial burden off your shoulders.<br><br>
+           
+           2. You will commit a long time to your studies<br>
+           Going to university is a long-term commitment, which could require three to eight years of your life, depending on the course you choose to take. This can be a real challenge if you are a working professional because you'll have to give up your full-time job to return to university.
+           But even if you are a young student, this factor can still be a consideration for you. After all, you will be depriving yourself of years of income and piling on student debt. That said, part-time study options could allow you to work while you work towards your degree.<br><br>
+           
+           3. You won’t be guaranteed a job<br>
+           The only guarantee you get from going to university is that you'll be graduating with a degree (if you work hard enough). Apart from that, there is not guarantee that you will find a job easily or that you will be promoted.  
+           The job market remains quite competitive, and you will need to assemble a variety of skills, qualifications and experience in order to stand out from other candidates. However, on many occasions, a college degree could be a minimum requirement to qualify for a role.<br><br>
+           
+           4. You will lack technical skills<br>
+           Not all degrees offer hands-on experience and  the chance to develop technical skills.
+           While many entry-level roles do offer training, your lack of technical skills could prolong how quickly you land a job and kickstart your career.
+           Internships, part-time work and volunteering are all great options to attain some technical experience in the fields you are interested in.<br><br>
+</p>
+    </div>
+</body>
+</html>

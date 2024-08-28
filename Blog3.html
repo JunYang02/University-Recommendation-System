@@ -1,0 +1,145 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Edu Assist</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <style>
+      *{
+    background-color: #f3f9fb;
+  }
+
+  .content img {
+  width:60%;
+  height: 600px;
+  margin-left: 170px;;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  }
+
+  .content p{
+    font-family: "Poppins";
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 10px;
+  }
+
+  .content h2{
+    margin-left: 5px;
+    font-family: "Poppins";
+    text-align: justify;
+  }
+
+  .content .intro{
+    font-weight: bold;
+    color: blue;
+  }
+
+  .button-65 {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #2f80ed;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: none;
+    width: 120px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    height: 50px;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 10px 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  .button-65:hover {
+    background-color: #1366d6;
+    box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+  }
+
+  .button-65:hover:after {
+    opacity: .5;
+  }
+
+  .button-65:active {
+    box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+    transform: translateY(2px);
+    transition-duration: .35s;
+  }
+
+  .button-65:active:after {
+    opacity: 1;
+  }
+
+  .back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  </style>
+
+</head>
+
+<body>
+  <div class="back-button">
+    <button class="button-65" onclick="history.back()">Go Back</button>
+  </div>
+
+    <div class="content">
+        <h2>Studying Abroad or Stay Home</h2>
+        <img src = "{% static 'image/Image 3.jpg' %}">
+        <p><span class = "intro">Introduction:</span><br>
+            When it comes to students, deciding whether to study abroad or stay in their home country for further studies is a major dilemma. Both options have their unique advantages. Studying at home provides a cosy and familiar atmosphere while studying abroad can offer enhanced professional opportunities and personal growth. 
+            Being abroad allows students to develop a skill set that is highly valued in today's world and provides excellent networking prospects by interacting with individuals from diverse backgrounds and exploring a wide range of career paths. However, studying abroad can also pose challenges such as adjusting to a new environment, cultural differences, and homesickness
+            On the other hand, studying in your home country offers the advantage of cost savings, including housing, transportation, visa processing, and the comfort of staying within your comfort zone. Let's delve deeper into both options and find the best fit for you.<br><br> 
+            
+            Academic Excellence<br>
+            Study abroad: Studying abroad means access to highly regarded academic institutions and programs. Students have the opportunity to learn from renowned scientists and professors while being exposed to the latest technology and scientific advances. Taking courses abroad also has the advantage of allowing you to take courses that are not available in your home country.           
+            Study in your home country: Studying in your home country may help you gain admission to top educational institutions. However, the range of programs offered may not be extensive, and the quality of individual institutions may also vary.<br><br>
+            
+            Career Development<br>
+            Studying abroad: Studying abroad provides opportunities to network and make meaningful connections that will improve your future career prospects. After all, to gain a foothold in the global market, you need to familiarize yourself with the diverse contexts and cultures that studying abroad facilitates.
+            Studying in your home country: Studying in your home country may limit your networking opportunities and social skills, which may limit your future employment opportunities.
+            And in the global market, studying in your home country does not necessarily mean flexibility or international recognition.<br><br>
+            
+            Cost<br>
+            Study abroad: The costs associated with studying abroad are high, including tuition, accommodation, transportation, and other expenses. Additionally, costs may increase if the student subsequently acquires health insurance or a visa.
+            If a student does not have a scholarship to study abroad, the cost of studying abroad can be high. But everything can be considered an investment in better professional development and personal mindset.
+            Studying in your own country: This one is always economical and rational due to low tuition fees, and in any case, living with your family reduces the cost of living, which further reduces the cost of living.<br><br>
+            
+            Personal Growth<br>
+            Study abroad: The first few months in a foreign country can be hectic as you are away from your family. It will take time to adjust to the new environment, adjust to cultural differences, and manage homesickness. But if you can deal with all these obstacles, it will lead to personal growth. Students can easily learn the power of independence, confidence, self-awareness, and self-awareness.
+            Studying in your own country: Studying in your home country always gives you a sense of stability and comfort.<br><br><br>
+            However, there are not as many opportunities for self-development as studying abroad.<br><br>
+            
+            Cultural Experiences<br>
+            Study abroad: Students who choose to study abroad have the chance to immerse themselves in a new culture and discover a new way of life. Expand your horizons by immersing yourself in a variety of new cultures, traditions, and lifestyles.
+            Studying in your own country: Studying in your home country allows you to stay in a comfortable cultural environment. It's easy to feel at ease and find security and certainty.
+            However, it ultimately limits exposure to other cultures, traditions, and perspectives.<br><br>
+        </p>
+    </div>
+</body>
+</html>
